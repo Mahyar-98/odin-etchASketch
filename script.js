@@ -7,3 +7,11 @@ for (let i = 0; i < 16; i++) {
     mainDiv.lastChild.appendChild(document.createElement("div"));
   }
 }
+
+const divs = mainDiv.querySelectorAll("body > div > div > div");
+console.log(divs)
+
+divs.forEach(div => {
+  div.addEventListener("mouseover", e => e.target.classList.toggle("div-active")); 
+  div.addEventListener("mouseout", e => e.target.classList.toggle("div-active"));  
+});
